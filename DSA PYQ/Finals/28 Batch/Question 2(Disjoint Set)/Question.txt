@@ -1,0 +1,36 @@
+
+(a) Without Path Compression
+
+union(1, 9)
+
+union(2, 4)
+
+union(4, 5)
+
+union(6, 3)
+
+union(6, 7)
+
+union(6, 8)
+
+union(9, 6)
+
+(b) With Path Compression
+
+union(1, 9)
+
+union(2, 4)
+
+union(4, 5)
+
+union(6, 3)
+
+union(6, 7)
+
+union(6, 8)
+
+union(9, 6)
+
+(c) Difference between Union by Size and Union by Rank
+
+ 

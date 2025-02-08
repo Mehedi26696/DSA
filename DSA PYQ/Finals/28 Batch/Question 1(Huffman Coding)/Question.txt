@@ -1,0 +1,9 @@
+
+// Given Input String:
+// "The quick brown mouse jumps over the lazy cat."
+
+// (a) Build a Huffman Tree from the input text.
+
+// (b) Encode "bob jumps over the river" using your Huffman Tree.
+
+//(c)You have to encode the text"bob runs over the river". However,suppose that character 'u' is not present in the Huffman Tree.How to modify the tree to add a code for 'u'?

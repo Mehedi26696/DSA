@@ -1,0 +1,8 @@
+
+(b) Starting from an empty binary search tree, insert the following values into it according to the given order. Draw the tree after inserting each value.
+
+ 1 11 43 19 17 2 3 4
+
+(c) Starting from the tree created in (7.b), delete the following values from it according to the given [3] order. Draw the tree after deleting each value.
+
+ 11 19 3

@@ -19,7 +19,6 @@ class queue {
     int back;
 
     int n;
-
     public:
     queue(int data) {
         n = data;

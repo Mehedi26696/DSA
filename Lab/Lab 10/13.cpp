@@ -1,5 +1,5 @@
-// Min Heap Implementation
 
+// Heap implementation
 #include <iostream>
 using namespace std;
 

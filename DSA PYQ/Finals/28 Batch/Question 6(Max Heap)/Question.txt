@@ -1,0 +1,10 @@
+
+
+(a) Starting from an empty Max Heap tree, insert the following values into it according to the given order. Draw the tree after inserting each value.
+
+ 1 2 3 4 55 6 37 12 82 32 11 43 19 17 
+
+
+(b) Starting from the Max Heap tree created in (6.a), and extract the maximum value from it till it is nonempty. Draw the tree after deleting each value.
+
+  1 2 3 4 55 6 37 12 82 32 11 43 19 17 
