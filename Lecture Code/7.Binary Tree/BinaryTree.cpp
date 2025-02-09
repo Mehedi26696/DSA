@@ -179,3 +179,6 @@ int main() {
 
     return 0;
 }
+
+
+// Time Complexity: O(n), where n is the number of nodes in the binary tree.

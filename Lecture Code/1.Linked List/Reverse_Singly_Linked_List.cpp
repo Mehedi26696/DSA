@@ -76,7 +76,8 @@ struct LL{
    
     void reverse(){
         Node* current = head;
-        Node *prev = NULL, *next = NULL;
+        Node *prev = NULL;
+        Node *next = NULL;
         while(current != NULL){
             next = current->next;
             current->next = prev;

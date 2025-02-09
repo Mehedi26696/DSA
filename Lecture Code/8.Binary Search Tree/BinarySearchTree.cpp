@@ -252,7 +252,7 @@ Node * deleteFromBST(Node* root , int key){
             delete root;
             return temp;
         }
-
+        
         // case 3: Node to be deleted has two children
         Node* temp = InorderSuccessor(root,root->data);
         root->data = temp->data;
@@ -364,4 +364,10 @@ int main() {
     return 0;
 }
 
+
+// Time Complexity: O(h), where h is the height of the tree.
+
+// Space Complexity: O(h), where h is the height of the tree.
+
+// Height of the tree can be O(n) in the worst case and O(log n) in the average case, where n is the number of nodes in the tree.
 

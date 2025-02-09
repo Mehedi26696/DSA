@@ -42,3 +42,5 @@ int main()
     cout << binarySearch(arr, n, key) << endl;
     return 0;
 }
+
+//Time Complexity: O(log(n)), where n is the number of elements in the array.

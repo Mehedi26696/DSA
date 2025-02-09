@@ -25,3 +25,81 @@
 // array, elements can be added to the front of the queue by wrapping around to the beginning of the
 // array, which can be more efficient than shifting all the elements in the array to make room for the
 // new element.
+
+
+// Implementation of Circular Queue using Array
+
+#include <iostream>
+using namespace std;
+
+class CircularQueue
+{
+private:
+    int *arr;
+    int front, rear, size, capacity;
+
+public:
+    CircularQueue(int c)
+    {
+        arr = new int[c];
+        capacity = c;
+        size = 0;
+        front = 0;
+        rear = -1;
+    }
+
+    int getFront()
+    {
+        if (size == 0)
+            return -1;
+        return arr[front];
+    }
+
+    int getRear()
+    {
+        if (size == 0)
+            return -1;
+        return arr[rear];
+    }
+
+    void enqueue(int x)
+    {
+        if (size == capacity)
+            return;
+        rear = (rear + 1) % capacity;
+        arr[rear] = x;
+        size++;
+    }
+
+    int dequeue()
+    {
+        if (size == 0)
+            return -1;
+        int frontElement = arr[front];
+        front = (front + 1) % capacity;
+        size--;
+        return frontElement;
+    }
+};
+
+int main()
+{
+    CircularQueue q(5);
+
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
+
+    cout << "Front element: " << q.getFront() << endl;
+    cout << "Rear element: " << q.getRear() << endl;
+
+    q.dequeue();
+    q.enqueue(6);
+
+    cout << "Front element: " << q.getFront() << endl;
+    cout << "Rear element: " << q.getRear() << endl;
+
+    return 0;
+}

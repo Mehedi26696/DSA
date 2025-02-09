@@ -1,5 +1,12 @@
 
-// Infix to Postfix conversion and evaluation of postfix expression using stack
+
+//  Consider the following infix mathematical expression.
+// 13-7*3*(11-5*(23/11)*7+319)
+// 
+// Convert the infix expression into a postfix expression. Show all the steps.
+// Evaluate the expression using the generated postfix expression. Show all the steps.
+
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -61,52 +68,15 @@ int evaluatePostfix(string postfix) {
 }
 
 
-string charintopostfix(string infix) {
-    stack<char> st;
-    string postfix = "";
-    for (char ch : infix) {
-        if((ch >='a' && ch<='z') || (ch>='A' && ch<='Z') || (ch>='0' && ch<='9')) {
-            postfix += ch;
-        } else if (ch == '(') {
-            st.push(ch);
-        } else if (ch == ')') {
-            while (!st.empty() && st.top() != '(') {
-                postfix += st.top();
-                st.pop();
-            }
-            st.pop();
-        } else {
-            while (!st.empty() && precedence(st.top()) >= precedence(ch)) {
-                postfix += st.top();
-                st.pop();
-            }
-            st.push(ch);
-        }
-    }
-
-    while (!st.empty()) {
-        postfix += st.top();
-        st.pop();
-    }
-
-    return postfix;
-
-}
-
 int main() {
 
     string infix;
     cout << "Enter the infix expression: ";
     cin >> infix;
-    
-    // string postfix = infixToPostfix(infix);
-    // cout << "Infix expression: " << infix << endl;
-    // cout << "Postfix expression: " << postfix << endl;
-    // cout << "Evaluation of postfix expression: " << evaluatePostfix(postfix) << endl;
-
-    string postfix = charintopostfix(infix);
+    // string infix = "3^7-5/7+3*4/5+6*2";
+    string postfix = infixToPostfix(infix);
     cout << "Infix expression: " << infix << endl;
     cout << "Postfix expression: " << postfix << endl;
-    
+    cout << "Evaluation of postfix expression: " << evaluatePostfix(postfix) << endl;
     return 0;
 }

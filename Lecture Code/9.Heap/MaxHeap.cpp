@@ -71,22 +71,28 @@ int rightChild(int i)
 }
 
 void heapifyDown(int i)
-{
+{   
 
+    // if left child is not present
+    
     if (leftChild(i) > last_index)
     {
         return;
     }
 
     int mx_node = -1;
-    if (leftChild(i) <= last_index && rightChild(i) > last_index)
-    {
+
+    // if right child is not present
+    if (leftChild(i) <= last_index && rightChild(i) > last_index)  
+    { 
         mx_node = leftChild(i);
     }
+    // if left child is greater than right child
     else if (heap[leftChild(i)] > heap[rightChild(i)])
     {
         mx_node = leftChild(i);
     }
+    // if right child is greater than left child
     else
     {
         mx_node = rightChild(i);

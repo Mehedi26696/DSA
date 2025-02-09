@@ -111,6 +111,8 @@ struct LL{
             while(temp->next->next != NULL){
                 temp = temp->next;
             }
+
+            tail = temp;
             Node* temp1 = temp->next;
             temp->next = NULL;
             delete temp1;

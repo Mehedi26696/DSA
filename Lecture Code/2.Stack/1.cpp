@@ -20,43 +20,45 @@ struct STACK
     };
 
     Stack *head = NULL;
-    Stack *tail = NULL;
+    
 
     void push(int ch)
     {
-        Stack *node = (Stack *)malloc(sizeof(Stack));
+        Stack *node = new Stack();
         node->val = ch;
         node->next = NULL;
 
         if (head == NULL)
         {
-            head = tail = node;
+            head = node;
             return;
         }
 
-        tail->next = node;
-        tail = node;
+        node->next = head;
+        head = node;
     }
 
     void pop()
     {
-        if (head->next == NULL)
+        if (head == NULL)
         {
+            cout << "Stack is empty" << endl;
             return;
         }
 
-        Stack *node = head;
-        while (node->next != tail)
-        {
-            node = node->next;
-        }
-        tail = node;
-        tail->next = NULL;
+        Stack *temp = head;
+        head = head->next;
+        delete temp;
     }
 
     int top()
     {
-        return tail->val;
+        if (head == NULL)
+        {
+            cout << "Stack is empty" << endl;
+            return -1;
+        }
+        return head->val;
     }
 
     bool empty()
@@ -65,7 +67,7 @@ struct STACK
             return true;
         else
             return false;
-    }
+    }   
 };
 
 int main()
@@ -78,7 +80,6 @@ int main()
     cout << stk.top() << endl;
     stk.pop();
     cout << stk.top() << endl;
-    
     cout << stk.empty() << endl;
     return 0;
 }

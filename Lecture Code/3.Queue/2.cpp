@@ -10,9 +10,6 @@
 
 #include <iostream>
 using namespace std;
-
-
-
 class queue {
     int* arr;
     int front;

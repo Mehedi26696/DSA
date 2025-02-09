@@ -13,9 +13,9 @@ int main()
     {   
          cin>>arr[i];
     }
-    for (int j = 1; j < n; j++)
+    for (int j = 0; j < n-1; j++)
     {
-         for (int k = 0; k < n-j; k++)
+         for (int k = 0; k < n-j-1; k++)
          {
             if(arr[k]>arr[k+1])
             {

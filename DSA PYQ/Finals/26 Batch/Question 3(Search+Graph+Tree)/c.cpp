@@ -1,4 +1,17 @@
 
+// c) Write down a psedocode for Depth First Search (DFS) of a given graph.
+
+// Pseudocode:
+// DFS(G, v):
+//     for each vertex u in G:
+//         u.visited = false
+//     DFS-Visit(v)
+//
+// DFS-Visit(v):
+//     v.visited = true
+//     for each vertex u adjacent to v:
+//         if u.visited == false:
+//             DFS-Visit(u)
 
 
 #include <iostream>
@@ -77,6 +90,3 @@ int main() {
  
     return 0;
 }
-
-// Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
-// Space Complexity: O(V), where V is the number of vertices in the graph.
