@@ -254,9 +254,13 @@ Node * deleteFromBST(Node* root , int key){
         }
         
         // case 3: Node to be deleted has two children
-        Node* temp = InorderSuccessor(root,root->data);
+        // Node* temp = InorderSuccessor(root,root->data);
+        // root->data = temp->data;
+        // root->right = deleteFromBST(root->right,temp->data);
+
+        Node *temp = InorderPredecessor(root, root->data);
         root->data = temp->data;
-        root->right = deleteFromBST(root->right,temp->data);
+        root->left = deleteFromBST(root->left, temp->data);
     }
 }
  
